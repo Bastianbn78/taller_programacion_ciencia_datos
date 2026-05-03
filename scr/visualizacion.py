@@ -32,10 +32,8 @@ def plot_decision_tree():
 	Importa los objetos desde `modelo` en tiempo de ejecución para evitar
 	ejecutar código de trazado cuando este módulo sea importado.
 	"""
-	try:
-		from modelo import model, x_test, y_test, x, y
-	except Exception as e:
-		raise RuntimeError('No se pudieron importar variables desde modelo.py: ' + str(e))
+	
+	from modelo import model, x_test, y_test, x, y
 
 	feature_names_es = [feature_name_map.get(col, col) for col in x.columns]
 	class_labels = ['Vino 0', 'Vino 1', 'Vino 2']
